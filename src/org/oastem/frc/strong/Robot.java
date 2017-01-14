@@ -32,17 +32,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * instead if you're new.
  */
 public class Robot extends SampleRobot {
-	// Ports
-	private final int FRONT_LEFT_CAN_DRIVE = 0;
-	private final int FRONT_RIGHT_CAN_DRIVE = 2;
-	private final int BACK_LEFT_CAN_DRIVE = 1;
-	private final int BACK_RIGHT_CAN_DRIVE = 3;
-
-
-	// Values
-	private final int DRIVE_ENC_CODE_PER_REV = 2048;
-	private final int DRIVE_WHEEL_DIAM = 8;
-
 	// Objects
 	private TalonDriveSystem talonDrive = TalonDriveSystem.getInstance();
 	private LogitechGamingPad pad;
@@ -59,8 +48,9 @@ public class Robot extends SampleRobot {
 	private boolean eStop2Pressed;
 
 	public Robot() {
-		talonDrive.initializeTalonDrive(FRONT_LEFT_CAN_DRIVE, BACK_LEFT_CAN_DRIVE, FRONT_RIGHT_CAN_DRIVE,
-				BACK_RIGHT_CAN_DRIVE, DRIVE_ENC_CODE_PER_REV, DRIVE_WHEEL_DIAM);
+		talonDrive.initializeTalonDrive(N.Drive.FRONT_LEFT, N.Drive.BACK_LEFT,
+			N.Drive.FRONT_RIGHT, N.Drive.BACK_RIGHT,
+			N.Drive.ENC_CODE_PER_REV, N.Drive.WHEEL_DIAM);
 	}
 
 	public void robotInit() {
