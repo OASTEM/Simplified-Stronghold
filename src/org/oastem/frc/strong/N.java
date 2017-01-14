@@ -1,5 +1,10 @@
 package org.oastem.frc.strong;
 
+/**
+ * Constants for use with Robot.java.
+ * 
+ * @author KTOmega
+ */
 class N {
 	class Drive {
 		// Ports
